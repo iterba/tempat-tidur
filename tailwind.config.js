@@ -8,9 +8,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                loto: ["Loto"],
                 roboto: ["Roboto"],
-                inter: ["Inter"],
             },
         },
     },
