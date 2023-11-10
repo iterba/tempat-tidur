@@ -31,7 +31,7 @@
                     {{ now()->format('d M Y') }}
                 </span></span>
             <span class="pl-5">Pukul : <span class="font-black text-gray-900">
-                    {{ now()->format('H:m:s') }}
+                    {{ now()->format('H:i:s') }}
                 </span></span>
         </div>
     </header>
@@ -79,7 +79,7 @@
             class="flex justify-between lg:justify-end text-xs lg:text-xl lg:divide-x-2 divide-gray-500 tracking-widest">
             <p class="lg:pr-5 mb-10 lg:mb-0">
                 Total Tersedia <span
-                    class="font-medium border p-4 rounded bg-green-700 text-white shadow-md">{{ $totalBed }}</span>
+                    class="font-medium border p-4 rounded bg-green-700 text-white shadow-md">{{ $totalBed}}</span>
             </p>
             <p class="lg:pl-5">
                 Total Terpakai <span
