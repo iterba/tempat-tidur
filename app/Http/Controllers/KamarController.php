@@ -33,6 +33,7 @@ class KamarController extends Controller
 
         $totalBed = Kamar::sum('jumlah_bed');
         $totalTerpakai = Kamar::sum('digunakan');
+        $totalTersedia = $totalBed - $totalTerpakai;
 
         return view('welcome', compact(
             'asoka1',
@@ -54,7 +55,8 @@ class KamarController extends Controller
             'merpati3',
 
             'totalBed',
-            'totalTerpakai'
+            'totalTerpakai',
+            'totalTersedia'
         ));
     }
 }

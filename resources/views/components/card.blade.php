@@ -5,7 +5,7 @@
         <span class="text-xl font-semibold tracking-widest leading-relaxed">{{ $title }}</span>
         <div class="flex flex-col items-end">
             <span class="text-gray-400 text-sm">Tersedia</span>
-            <span class="text-gray-600 font-medium">
+            <span class="text-gray-600 font-medium text-xl">
                 {{ $kapasitas - $terpakai }}
                 <i class="fa fa-bed ml-1"></i>
             </span>

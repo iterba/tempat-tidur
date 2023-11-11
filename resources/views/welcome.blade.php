@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
     <title>Informasi Tempat Tidur - {{ config('config.name', 'RS. Ernaldi Bahar') }}</title>
 
@@ -78,12 +79,16 @@
         <div
             class="flex justify-between lg:justify-end text-xs lg:text-xl lg:divide-x-2 divide-gray-500 tracking-widest">
             <p class="lg:pr-5 mb-10 lg:mb-0">
-                Total Tersedia <span
-                    class="font-medium border p-4 rounded bg-green-700 text-white shadow-md">{{ $totalBed}}</span>
+                Kapasitas Tempat Tidur <span
+                    class="font-medium border p-4 rounded shadow-md">{{ $totalBed}}</span>
+            </p>
+            <p class="lg:pl-5 lg:pr-5">
+                Total Terpakai <span
+                    class="font-medium border p-4 rounded bg-orange-400 text-white shadow-md">{{ $totalTerpakai }}</span>
             </p>
             <p class="lg:pl-5">
-                Total Terpakai <span
-                    class="font-medium border p-4 rounded bg-gray-700 text-white shadow-md">{{ $totalTerpakai }}</span>
+                Total Tersedia <span
+                    class="font-medium border p-4 rounded bg-green-600 text-white shadow-md">{{ $totalTersedia }}</span>
             </p>
         </div>
     </main>
