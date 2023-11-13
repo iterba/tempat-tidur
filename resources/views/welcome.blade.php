@@ -38,15 +38,14 @@
         {{-- <img src="{{ asset('assets/logo/logo.png') }}" alt="Ernaldi Bahar"
             class="absolute -top-20 right-40 opacity-10 -z-10 rotate-12" width="350"> --}}
         <img src="{{ asset('assets/logo/erba-hospital.png') }}" alt="Ernaldi Bahar"
-            class="absolute invisible lg:visible top-10 right-40 opacity-20 -z-10 rotate-6" width="500">
+            class="absolute invisible lg:visible top-10 right-24 opacity-30" width="300">
     </header>
 
     <main class="w-full">
         <div class="grid gap-5 lg:grid-cols-4 lg:gap-12 mb-10 lg:mb-28">
             {{-- ASOKA --}}
             <x-card title="ASOKA" :kelas1="$asoka1" :kelas2="$asoka2" :kelas3="$asoka3" :vip="$asokavip"
-                class="bg-gradient-to-br from-[#900560] via-[#C03059] to-[#F8904A] text-white" :kapasitas="$asoka1->jumlah_bed + $asoka2->jumlah_bed + $asoka3->jumlah_bed + $asokavip->jumlah_bed"
-                :terpakai="$asoka1->digunakan + $asoka2->digunakan + $asoka3->digunakan + $asokavip->digunakan" />
+                class="bg-gradient-to-tr from-[#4e54c8] to-[#8f94fb] text-white" :kapasitas="$asoka1->jumlah_bed + $asoka2->jumlah_bed + $asoka3->jumlah_bed + $asokavip->jumlah_bed" :terpakai="$asoka1->digunakan + $asoka2->digunakan + $asoka3->digunakan + $asokavip->digunakan" />
 
             {{-- BANGAU --}}
             <x-card title="BANGAU" :kelas3="$bangau3" :kapasitas="$bangau3->jumlah_bed" :terpakai="$bangau3->digunakan"
@@ -73,7 +72,7 @@
                     $cendrawasih2->digunakan +
                     $cendrawasih3->digunakan +
                     $cendrawasihvip->digunakan"
-                class="bg-gradient-to-tr from-[#4e54c8] to-[#8f94fb] text-white" />
+                class="bg-gradient-to-br from-[#900560] via-[#C03059] to-[#F8904A] text-white" />
 
             {{-- KENANGA --}}
             <x-card title="KENANGA" :kelas3="$kenanga3" :kapasitas="$kenanga3->jumlah_bed" :terpakai="$kenanga3->digunakan"
@@ -88,23 +87,27 @@
                 class="bg-gradient-to-tl from-[#3CA55C] to-[#B5AC49] text-white" />
         </div>
 
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center w-full">
             <a href="http://192.168.20.3/bedinfo/bedinfo.php" target="_blank"
-                class="font-medium border p-4 rounded bg-sky-500 text-white shadow-md invisible lg:visible">Bed
+                class="font-medium hidden lg:block flex-none underline tracking-wider text-xl">Bed
                 Detail</a>
+
             <div
-                class="flex justify-between lg:justify-end text-xs lg:text-xl lg:divide-x-2 divide-gray-500 tracking-widest space-x-2">
-                <p class="lg:pr-5 mb-10 lg:mb-0 flex flex-col lg:flex-row lg:items-center">
-                    Kapasitas Tempat Tidur <span
-                        class="font-medium border p-4 rounded shadow-md bg-gray-500 text-white mt-2 lg:mt-0 lg:ml-4">{{ $totalBed }}</span>
+                class="flex w-full justify-between text-center lg:text-left lg:justify-end text-xs lg:text-xl lg:divide-x-2 divide-gray-500 tracking-widest space-x-2">
+                <p class="font-medium lg:pr-5 mb-10 lg:mb-0 flex flex-col lg:flex-row lg:items-center">
+                    <span>Kapasitas <br class="lg:hidden" /> Tempat Tidur</span>
+                    <span
+                        class="text-center lg:text-5xl font-medium border p-4 rounded-lg shadow-md bg-sky-500 text-white mt-2 lg:mt-0 lg:ml-4">{{ $totalBed }}</span>
                 </p>
-                <p class="lg:pl-5 lg:pr-5 flex flex-col lg:flex-row lg:items-center">
-                    Total Terpakai <span
-                        class="font-medium border p-4 rounded bg-orange-400 text-white shadow-md mt-2 lg:mt-0 lg:ml-4">{{ $totalTerpakai }}</span>
+                <p class="font-medium lg:pl-5 lg:pr-5 flex flex-col lg:flex-row lg:items-center">
+                    <span>Total <br class="lg:hidden" /> Terpakai</span>
+                    <span
+                        class="text-center lg:text-5xl font-medium border p-4 rounded-lg bg-orange-400 text-white shadow-md mt-2 lg:mt-0 lg:ml-4">{{ $totalTerpakai }}</span>
                 </p>
-                <p class="lg:pl-5 flex flex-col lg:flex-row lg:items-center">
-                    Total Tersedia <br /> (kosong) <span
-                        class="font-medium border p-4 rounded bg-green-600 text-white shadow-md mt-2 lg:mt-0 lg:ml-4">{{ $totalTersedia }}</span>
+                <p class="font-medium lg:pl-5 flex flex-col lg:flex-row lg:items-center">
+                    <span>Total Tersedia <br /> (Bed Kosong)</span>
+                    <span
+                        class="text-center lg:text-5xl font-medium border p-4 rounded-lg bg-green-600 text-white shadow-md mt-2 lg:mt-0 lg:ml-4">{{ $totalTersedia }}</span>
                 </p>
             </div>
         </div>
