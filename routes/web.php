@@ -15,6 +15,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [KamarController::class, 'index'])->name('home');
-Route::get('/detail', function () {
-    return redirect('http://192.168.20.3/bedinfo/bedinfo.php');
-})->name('detail');
