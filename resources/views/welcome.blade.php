@@ -87,20 +87,24 @@
                 class="bg-gradient-to-tl from-[#3CA55C] to-[#B5AC49] text-white" />
         </div>
 
-        <div
-            class="flex justify-between lg:justify-end text-xs lg:text-xl lg:divide-x-2 divide-gray-500 tracking-widest">
-            <p class="lg:pr-5 mb-10 lg:mb-0">
-                Kapasitas Tempat Tidur <span
-                    class="font-medium border p-4 rounded shadow-md bg-gray-500 text-white">{{ $totalBed }}</span>
-            </p>
-            <p class="lg:pl-5 lg:pr-5">
-                Total Terpakai <span
-                    class="font-medium border p-4 rounded bg-orange-400 text-white shadow-md">{{ $totalTerpakai }}</span>
-            </p>
-            <p class="lg:pl-5">
-                Total Tersedia <span
-                    class="font-medium border p-4 rounded bg-green-600 text-white shadow-md">{{ $totalTersedia }}</span>
-            </p>
+        <div class="flex justify-between items-center">
+            <a href="{{ route('detail') }}" class="font-medium border p-4 rounded bg-sky-500 text-white shadow-md">Bed
+                Detail</a>
+            <div
+                class="flex justify-between lg:justify-end text-xs lg:text-xl lg:divide-x-2 divide-gray-500 tracking-widest">
+                <p class="lg:pr-5 mb-10 lg:mb-0">
+                    Kapasitas Tempat Tidur <span
+                        class="font-medium border p-4 rounded shadow-md bg-gray-500 text-white">{{ $totalBed }}</span>
+                </p>
+                <p class="lg:pl-5 lg:pr-5">
+                    Total Terpakai <span
+                        class="font-medium border p-4 rounded bg-orange-400 text-white shadow-md">{{ $totalTerpakai }}</span>
+                </p>
+                <p class="lg:pl-5">
+                    Total Tersedia <span
+                        class="font-medium border p-4 rounded bg-green-600 text-white shadow-md">{{ $totalTersedia }}</span>
+                </p>
+            </div>
         </div>
     </main>
 </body>
