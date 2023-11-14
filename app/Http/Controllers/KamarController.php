@@ -59,4 +59,24 @@ class KamarController extends Controller
             'totalTersedia'
         ));
     }
+
+    function detail()
+    {
+
+        $all = Kamar::orderBy('nama_kamar', 'asc')->get();
+
+
+        $totalBed = Kamar::sum('jumlah_bed');
+        $totalTerpakai = Kamar::sum('digunakan');
+        $totalTersedia = $totalBed - $totalTerpakai;
+
+
+        return view('detail', compact(
+            'all',
+
+            'totalBed',
+            'totalTerpakai',
+            'totalTersedia'
+        ));
+    }
 }

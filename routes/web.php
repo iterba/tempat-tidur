@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [KamarController::class, 'index'])->name('home');
+Route::get('/detail', [KamarController::class, 'detail'])->name('detail');
