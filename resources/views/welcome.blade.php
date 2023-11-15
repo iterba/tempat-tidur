@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="grid gap-5 lg:grid-cols-4 lg:gap-12 mb-10 lg:mb-28">
+    <div class="grid gap-5 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-5 mb-10 lg:mb-28">
         {{-- ASOKA --}}
         <x-card title="ASOKA" :kelas1="$asoka1" :kelas2="$asoka2" :kelas3="$asoka3" :vip="$asokavip"
             class="bg-gradient-to-tr from-[#4e54c8] to-[#8f94fb] text-white" :kapasitas="$asoka1->jumlah_bed + $asoka2->jumlah_bed + $asoka3->jumlah_bed + $asokavip->jumlah_bed" :terpakai="$asoka1->digunakan + $asoka2->digunakan + $asoka3->digunakan + $asokavip->digunakan" />
@@ -40,28 +40,46 @@
         {{-- MERPATI --}}
         <x-card title="MERPATI" :kelas3="$merpati3" :kapasitas="$merpati3->jumlah_bed" :terpakai="$merpati3->digunakan"
             class="bg-gradient-to-tl from-[#3CA55C] to-[#B5AC49] text-white" />
+
+        <div class="md:inline-block w-full hidden 2xl:hidden space-y-3">
+            <p class="flex items-center">
+                <span class="mb-2 font-medium leading-tight">Kapasitas <br/> Tempat Tidur</span>
+                <span class="w-3/12 p-3 text-xl tracking-wider align-middle text-center ml-auto text-white bg-sky-500 rounded font-medium">{{ $totalBed }}</span>
+            </p>
+            <p class="flex items-center">
+                <span class="mb-2 font-medium leading-tight">Total <br/> Terpakai</span>
+                <span class="w-3/12 p-3 text-xl tracking-wider align-middle text-center ml-auto text-white bg-orange-500 rounded font-medium">{{ $totalTerpakai }}</span>
+            </p>
+            <p class="flex items-center">
+                <span class="mb-2 font-medium leading-tight">Total Tersedia <br /> (Bed Kosong)</span>
+                <span class="w-3/12 p-3 text-xl tracking-wider align-middle text-center ml-auto text-white bg-green-600 rounded font-medium">{{ $totalTersedia }}</span>
+            </p>
+        </div>
     </div>
 
-    <div class="flex justify-between items-center w-full">
-        <a href="{{ route('detail') }}" class="font-medium hidden lg:block flex-none underline tracking-wider text-xl">Bed
-            Detail</a>
+    <div class="flex justify-between items-center w-full md:hidden 2xl:flex 2xl:items-center">
+        <a href="{{ route('detail') }}" class="font-medium hidden lg:block flex-none underline tracking-wider text-xl">
+            Bed Detail
+        </a>
 
-        <div
-            class="flex w-full justify-between text-center lg:text-left lg:justify-end text-xs lg:text-xl lg:divide-x-2 divide-gray-500 tracking-widest space-x-2">
-            <p class="font-medium lg:pr-5 mb-10 lg:mb-0 flex flex-col lg:flex-row lg:items-center">
-                <span>Kapasitas <br class="lg:hidden" /> Tempat Tidur</span>
-                <span
-                    class="text-center lg:text-5xl font-medium border p-4 rounded-lg shadow-md bg-sky-500 text-white mt-2 lg:mt-0 lg:ml-4">{{ $totalBed }}</span>
+        <div class="flex w-full 2xl:w-fit 2xl:space-x-10 justify-between lg:justify-start text-center mb-3 2xl:mb-0 text-sm 2xl:divide-x-2 divide-gray-900">
+            <p class="flex flex-col 2xl:flex-row 2xl:items-center 2xl:text-lg 2xl:tracking-widest">
+                <span class="mb-2 font-medium">Kapasitas <br class="2xl:hidden"/> Tempat Tidur bawah</span>
+                <span class="2xl:ml-5 2xl:text-4xl 2xl:px-3 text-lg text-white bg-sky-500 rounded font-medium py-1">
+                    {{ $totalBed }}
+                </span>
             </p>
-            <p class="font-medium lg:pl-5 lg:pr-5 flex flex-col lg:flex-row lg:items-center">
-                <span>Total <br class="lg:hidden" /> Terpakai</span>
-                <span
-                    class="text-center lg:text-5xl font-medium border p-4 rounded-lg bg-orange-400 text-white shadow-md mt-2 lg:mt-0 lg:ml-4">{{ $totalTerpakai }}</span>
+            <p class="flex flex-col 2xl:flex-row 2xl:items-center 2xl:text-lg 2xl:tracking-widest 2xl:pl-10">
+                <span class="mb-2 font-medium">Total <br class="2xl:hidden"/> Terpakai</span>
+                <span class="2xl:ml-5 2xl:text-4xl 2xl:px-3 text-lg text-white bg-orange-500 rounded font-medium py-1">
+                    {{ $totalTerpakai }}
+                </span>
             </p>
-            <p class="font-medium lg:pl-5 flex flex-col lg:flex-row lg:items-center">
-                <span>Total Tersedia <br /> (Bed Kosong)</span>
-                <span
-                    class="text-center lg:text-5xl font-medium border p-4 rounded-lg bg-green-600 text-white shadow-md mt-2 lg:mt-0 lg:ml-4">{{ $totalTersedia }}</span>
+            <p class="flex flex-col 2xl:flex-row 2xl:items-center 2xl:text-lg 2xl:tracking-widest 2xl:pl-10">
+                <span class="mb-2 font-medium">Total Tersedia <br class="2xl:hidden" /> (Bed Kosong)</span>
+                <span class="2xl:ml-5 2xl:text-4xl 2xl:px-3 text-lg text-white bg-green-600 rounded font-medium py-1">
+                    {{ $totalTersedia }}
+                </span>
             </p>
         </div>
     </div>

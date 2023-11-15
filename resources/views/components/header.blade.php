@@ -1,6 +1,6 @@
-<header class="py-10 lg:w-6/12 lg:mb-10">
+<header class="py-5 lg:py-6 lg:w-8/12 2xl:w-6/12 2xl:mb-10 2xl:py-10">
     <a href="{{ route('home') }}">
-        <h1 class="text-lg w-full lg:w-[600px] md:text-4xl font-medium mb-5 leading-tight">
+        <h1 class="text-lg w-full mb-3 lg:mb-0 2xl:w-[600px] lg:text-2xl 2xl:text-4xl 2xl:mb-5 font-medium leading-tight">
             Informasi Kapasitas Ketersediaan Tempat Tidur Rawat Inap
         </h1>
     </a>
@@ -15,5 +15,5 @@
     </div>
 
     <img src="{{ asset('assets/logo/erba-hospital.png') }}" alt="Ernaldi Bahar"
-        class="absolute invisible lg:visible top-10 right-24 opacity-30" width="300">
+        class="absolute invisible lg:visible 2xl:top-12 lg:top-5 lg:right-44 2xl:right-24 opacity-30 -z-10" width="300">
 </header>

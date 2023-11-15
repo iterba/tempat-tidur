@@ -20,10 +20,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="px-4 lg:px-20 antialiased h-full bg-gray-100 font-roboto">
+<body class="px-4 lg:px-10 2xl:px-20 antialiased h-full bg-gray-100 font-roboto">
     <x-header />
 
-    <main class="w-full">
+    <main class="w-full relative">
         @yield('content')
     </main>
 </body>

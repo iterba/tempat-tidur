@@ -3,17 +3,18 @@
 <div {{ $attributes->merge(['class' => 'p-5 rounded-lg bg-white text-gray-600 shadow-md']) }}">
     <div class="flex items-center justify-between mb-10">
         <span class="text-xl font-semibold tracking-widest leading-relaxed">{{ $title }}</span>
-        <div class="flex space-x-10">
+        <div class="flex space-x-4 md:space-x-10">
             <div class="flex flex-col items-end">
                 <span class="text-sm">Kapasitas</span>
-                <span class="font-medium text-xl">
+                <span class="font-medium md:text-xl text-sm">
                     {{ $kapasitas }}
                     <i class="fa fa-bed ml-1"></i>
                 </span>
             </div>
+
             <div class="flex flex-col items-end">
                 <span class="text-sm">Tersedia</span>
-                <span class="font-medium text-xl">
+                <span class="font-medium md:text-xl text-sm">
                     {{ $kapasitas - $terpakai }}
                     <i class="fa fa-bed ml-1"></i>
                 </span>
