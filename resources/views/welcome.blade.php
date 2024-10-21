@@ -3,8 +3,8 @@
 @section('content')
     <div class="grid gap-5 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-5 mb-10 lg:mb-28">
         {{-- ASOKA --}}
-        <x-card title="ASOKA" :kelas1="$asoka1" :kelas2="$asoka2" :kelas3="$asoka3" :vip="$asokavip"
-            class="bg-gradient-to-tr from-[#4e54c8] to-[#8f94fb] text-white" :kapasitas="$asoka1->jumlah_bed + $asoka2->jumlah_bed + $asoka3->jumlah_bed + $asokavip->jumlah_bed" :terpakai="$asoka1->digunakan + $asoka2->digunakan + $asoka3->digunakan + $asokavip->digunakan" />
+        {{-- <x-card title="ASOKA" :kelas1="$asoka1" :kelas2="$asoka2" :kelas3="$asoka3" :vip="$asokavip"
+            class="bg-gradient-to-tr from-[#4e54c8] to-[#8f94fb] text-white" :kapasitas="$asoka1->jumlah_bed + $asoka2->jumlah_bed + $asoka3->jumlah_bed + $asokavip->jumlah_bed" :terpakai="$asoka1->digunakan + $asoka2->digunakan + $asoka3->digunakan + $asokavip->digunakan" /> --}}
 
         {{-- BANGAU --}}
         <x-card title="BANGAU" :kelas3="$bangau3" :kapasitas="$bangau3->jumlah_bed" :terpakai="$bangau3->digunakan"

@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kamar;
-use Illuminate\Http\Request;
 
 class KamarController extends Controller
 {
     function index()
     {
-        $asoka1 = Kamar::where('nama_kamar', 'ASOKA I')->first();
-        $asoka2 = Kamar::where('nama_kamar', 'ASOKA II')->first();
-        $asoka3 = Kamar::where('nama_kamar', 'ASOKA III')->first();
-        $asokavip = Kamar::where('nama_kamar', 'ASOKA VIP')->first();
+        // $asoka1 = Kamar::where('nama_kamar', 'ASOKA I')->first();
+        // $asoka2 = Kamar::where('nama_kamar', 'ASOKA II')->first();
+        // $asoka3 = Kamar::where('nama_kamar', 'ASOKA III')->first();
+        $asoka = Kamar::where('nama_kamar', 'ASOKA Non Kelas')->first();
 
         $bangau3 = Kamar::where('nama_kamar', 'BANGAU III')->first();
         $camar3 = Kamar::where('nama_kamar', 'CAMAR III ( Napza )')->first();
@@ -36,10 +35,7 @@ class KamarController extends Controller
         $totalTersedia = $totalBed - $totalTerpakai;
 
         return view('welcome', compact(
-            'asoka1',
-            'asoka2',
-            'asoka3',
-            'asokavip',
+            'asoka',
             'bangau3',
             'camar3',
             'cempaka1',
